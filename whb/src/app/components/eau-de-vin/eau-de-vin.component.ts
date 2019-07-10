@@ -6,10 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./eau-de-vin.component.scss']
 })
 export class EauDeVinComponent implements OnInit {
+  config;
+  fullpage_api;
+  constructor() {
 
-  constructor() { }
+    // this is just an example => for more details on config please visit fullPage.js docs
+    this.config = {
+      licenseKey: 'YOUR LICENSE KEY HERE',
+      sectionsColor: ['#fff'],
+      anchors: [''],
+      navigation: true,
+      scrollSpeed: 100
+    };
+  }
 
   ngOnInit() {
+  }
+
+  getRef(fullPageRef) {
+
+    this.fullpage_api = fullPageRef;
   }
 
 }

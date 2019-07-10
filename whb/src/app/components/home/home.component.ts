@@ -10,15 +10,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  config;
+  fullpage_api;
 
-  constructor(public afAuth: AngularFireAuth, private readonly router: Router){}
+  constructor(public afAuth: AngularFireAuth, private readonly router: Router){
+    // this is just an example => for more details on config please visit fullPage.js docs
+    this.config = {
+      licenseKey: 'YOUR LICENSE KEY HERE',
+      sectionsColor: ['#fff', 'whitesmoke'],
+      anchors: ['', 'products'],
+      navigation: true,
+      scrollSpeed: 100
+    };
+  }
 
   ngOnInit() {
   }
+  getRef(fullPageRef) {
 
+    this.fullpage_api = fullPageRef;
+  }
   public onInquire(type: string) {
     if (type === 'LearnMore') {
-      window.location.href = 'mailto:questions@truittluke.com?subject=I\'m interested in learning more about your Apps';
+      window.location.href = 'mailto:questions@nouv-eau.com?subject=I\'m interested in learning more about your Products';
     } else {
       window.location.href = 'mailto:' + type.toLocaleLowerCase() +
       'apps@truittluke.com?subject=I\'m interested in learning more about your ' + type + ' Apps';
@@ -29,11 +43,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['eaudevin']);
   }
 
-  public onGoodVine() {
-    this.router.navigate(['goodvine']);
-  }
-
-  public onIosInquire() {
-    window.location.href = 'mailto:iosapps@truittluke.com?subject=I\'m interested in learning more about your iOS Apps';
+  public onWHB() {
+    this.router.navigate(['winehealthboost']);
   }
 }
