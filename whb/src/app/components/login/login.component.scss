@@ -1,0 +1,72 @@
+@import '../../../assets/styles/fonts.scss';
+@import '../../../assets/mixins/fonts.scss';
+
+$input-border-radius: .5em;
+$input-border-weight: 2px; //Fixed at 2px as .1em was not enough for font sizes smaller than 20px
+$input-background-color: #ffffff;
+$input-font: $font-family-roboto; // Grab from fonts.scss
+$input-font-size: 20px;
+$border-color: blue;
+
+.error{
+  color: red;
+}
+
+.login-button {
+  position:absolute;
+  top: 12%;
+  left: 60%;
+  color: white;
+  background-color: #33a1fd;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: 'Lucida Grande', sans-serif;
+  font-size: 30pt !important;
+  border: 0px;
+  font-weight: bold;
+  opacity: .8;
+  width: 50%;
+  height: 20%;
+  }
+
+.login-button:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    opacity: 1;
+}
+
+html,
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+.container {
+  min-height:100%;
+  position:relative;
+}
+.body {
+  padding:10px;
+  margin-top: 100px;
+  margin-left: 10%;
+  height: 64.5vh;
+  padding-bottom:110px;	/* Height of the footer */
+}
+
+input {
+  width: 50%;
+  padding: .5em;
+  font-family: $font-family-roboto;
+  font-size: 1em;
+  border: $input-border-weight solid;
+  border-color: $border-color;
+  border-radius: $input-border-radius;
+
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 10px $border-color;
+}

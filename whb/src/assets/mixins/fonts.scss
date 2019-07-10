@@ -1,0 +1,27 @@
+//Font-size equilvelency is based on browsers default 16px font-size
+$font-size-extra-large: 1.5em;  // Equivelent to 24px
+$font-size-large: 1.25em; // Equivelent to 20px
+$font-size-medium: 1em;   // Equivelent to 16px
+$font-size-small: .875em; // Equivelent to 14px
+$font-size-extra-small: .75em; // Equivelent to 12px
+
+//Font-families used by provalens
+$font-family-roboto: 'Roboto', sans-serif;
+$font-family-sans: 'Source Sans Pro', sans-serif;
+
+@mixin font($font-family, $font-size, $font-weight: unset) {
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: $font-weight;
+}
+
+@mixin font-color($foreground-color, $background-color: unset) {
+  color: $foreground-color;
+  background-color: $background-color;
+}
+
+@mixin font-transforms($letter-spacing: unset, $text-transform: unset) {
+  text-transform: $text-transform;
+  letter-spacing: $letter-spacing;
+}
+

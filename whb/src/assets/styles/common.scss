@@ -1,0 +1,44 @@
+@import '../mixins/buttons.scss';
+@import '../mixins/fonts.scss';
+
+//Mixin for all of ProValens buttons
+@mixin provalens-common($theme) {
+  // Pallets
+  $accent-pallet: map-get($theme, accent);
+  $primary-pallet: map-get($theme, primary);
+  $warn-pallet: map-get($theme, warn);
+
+  a {
+    cursor: pointer;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  /* Font Sizes */
+  .extra-small { font-size: $font-size-extra-small !important; }
+  .small { font-size: $font-size-small!important; }
+  .medium { font-size: $font-size-medium !important; }
+  .large { font-size: $font-size-large !important; }
+  .extra-large { font-size: $font-size-extra-large !important; }
+
+  .primary-border {
+    border-color: mat-color($primary-pallet);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 8px;
+
+    &.dashed {
+      border-style: dashed;
+    }
+  }
+
+  .primary-background {
+    background-color: mat-color($primary-pallet);
+  }
+}

@@ -1,0 +1,73 @@
+@import '../mixins/fonts.scss';
+
+//Mixin for all of ProValens fonts
+@mixin provalens-fonts($theme){
+  $accent-pallet: map-get($theme, accent);
+  $accent-color: mat-color($accent-pallet);
+
+  $primary-pallet: map-get($theme, primary);
+  $primary-color: mat-color($primary-pallet);
+
+  $warn-pallet: map-get($theme, warn);
+  $warn-color: mat-color($warn-pallet);
+
+  h1 {
+    @include font($font-family-sans, 3em, 700);
+    @include font-transforms(0.5px);
+    @include font-color(#1a1c26); //TODO: Move color to common?
+  }
+
+  h2 {
+    @include font($font-family-sans, $font-size-large, 700);
+    @include font-transforms(1px);
+    @include font-color(#1a1c26);
+  }
+
+  h3 {
+    @include font($font-family-sans, $font-size-large, 700);
+    @include font-transforms(1px, uppercase);
+    @include font-color(#1a1c26);
+  }
+
+  h4 {
+    @include font($font-family-sans, $font-size-small, 700);
+    @include font-transforms(1px, uppercase);
+    @include font-color(#1a1c26);
+  }
+
+  a {
+    @include font-color($primary-color);
+  }
+
+  p {
+    @include font($font-family-roboto, $font-size-medium, 400);
+  }
+
+  .label {
+    @include font($font-family-sans, $font-size-medium, 700);
+    @include font-transforms(1px, uppercase);
+  }
+
+  .error {
+    @include font($font-family-roboto, $font-size-medium, 200);
+    @include font-color($warn-color)
+  }
+
+  .hint {
+    @include font($font-family-roboto, $font-size-medium, 200);
+    @include font-color(#8c8d92)
+  }
+
+  .type {
+    @include font($font-family-roboto, $font-size-small, 700);
+    @include font-color(#8c8d92)
+  }
+
+  .primary {
+    @include font-color($primary-color)
+  }
+
+  .accent {
+    @include font-color($accent-color)
+  }
+}

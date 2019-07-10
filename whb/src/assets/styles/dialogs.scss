@@ -1,0 +1,42 @@
+@import '../mixins/buttons.scss';
+
+
+//Mixin for all of ProValens buttons
+@mixin provalens-dialogs($theme){
+  // Pallets
+  $accent-pallet: map-get($theme, accent);
+  $primary-pallet: map-get($theme, primary);
+  $warn-pallet: map-get($theme, warn);
+
+  // Colors
+  $accent-color: mat-color($accent-pallet);
+  $primary-color: mat-color($primary-pallet);
+  $warn-color: mat-color($warn-pallet);
+
+
+  .cdk-overlay-pane {
+    max-height: 80vh!important;
+    //overflow-y: auto;
+  }
+
+  .dialog-container {
+    #title {
+      margin-top: 0px; // Just use the padding given by the mat dialog
+    }
+
+    #message {
+      margin-top: 0px; // Just using the margin given by fxLayoutGap
+    }
+
+
+    .dialog-action{
+      text-align:center;
+      &:first-of-type {
+        text-align: left;
+      }
+      &:last-of-type {
+        text-align: right;
+      }
+    }
+  }
+}

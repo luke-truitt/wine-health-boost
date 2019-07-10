@@ -1,0 +1,40 @@
+//Import ProValens Theme files
+@import './styles/fonts';
+@import './styles/inputs';
+@import './styles/icons';
+@import './styles/images';
+@import './styles/buttons';
+@import './styles/cards';
+@import './styles/common';
+@import './styles/dialogs';
+@import './styles/toasters';
+@import './styles/toolbars';
+
+
+//Import Angular Material Files
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700|Source+Sans+Pro:700');
+
+//Mixin for all of ProValens themes
+@mixin provalens-material-theme($primary-pallet, $secondary-pallet){
+  @include mat-core();
+
+  $theme-primary: mat-palette($primary-pallet);
+  $theme-accent: mat-palette($secondary-pallet);
+  $theme-warn: mat-palette($mat-red);
+  $theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+
+  @include angular-material-theme($theme);
+
+  @include provalens-common($theme);
+  @include provalens-fonts($theme);
+  @include provalens-inputs($theme);
+  @include provalens-dialogs($theme);
+  @include provalens-icons($theme);
+  @include provalens-images($theme);
+  @include provalens-cards($theme);
+  @include provalens-buttons($theme);
+  @include provalens-toolbars($theme);
+  @include provalens-toasters($theme);
+
+}

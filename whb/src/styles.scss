@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@import url(~fullpage.js/dist/fullpage.min.css);
+
+@include mat-core();
+@import './assets/provalens-theme';
+
+@import './assets/pallets/provalens-blue-pallet';
+@import './assets/pallets/provalens-green-pallet';
+
+@include provalens-material-theme($provalens-blue-pallet, $provalens-green-pallet);
+
+$theme-primary: mat-palette($provalens-blue-pallet);
+$theme-accent: mat-palette($provalens-green-pallet);
+$theme-warn: mat-palette($mat-red);
+$theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+$warn: map-get($theme, warn);
+
+body {
+    margin: 0;
+}
+
+button.accent {
+    background-color: mat-color($accent) !important;
+  }
+
+mat-icon {
+  &.primary {
+    color: mat-color($primary)!important;
+  }
+  &.accent {
+    color: mat-color($accent)!important;
+  }
+}
+
+.bottom-bar {
+  background-color: mat-color($primary)!important;
+  font-family: Georgia, serif;
+  font-size: 0.5cm;
+  color: white;
+  position: sticky;
+  bottom:0;
+  width:100%;
+}

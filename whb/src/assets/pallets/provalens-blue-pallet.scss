@@ -1,0 +1,38 @@
+/*
+  - Material Color Pallets: https://material.io/guidelines/style/color.html#color-color-palette
+  - Good website to understand theming: https://blog.thoughtram.io/angular/2017/05/23/custom-themes-with-angular-material.html#custom-theme-using-built-in-color-palettes
+*/
+@import '~@angular/material/theming';
+
+$provalens-blue-pallet: (
+  50: #dae3f1,
+  100: #bccde6,
+  200: #9fb7db,
+  300: #81a1cf,
+  400: #648bc4,
+  500: #4675b9,
+  600: #2a5b9c,
+  700: #1c4d8d,
+  800: #0e407f,
+  900: #003370,
+  A100: #ff8a80,
+  A200: #ff5252,
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);

@@ -1,0 +1,130 @@
+@import '../mixins/fonts.scss';
+
+@mixin provalens-cards($theme) {
+  // Pallets
+  $accent-pallet: map-get($theme, accent);
+  $primary-pallet: map-get($theme, primary);
+  $warn-pallet: map-get($theme, warn);
+
+  provalens-card {
+    font-size: $font-size-large; //20px
+
+    #card-container {
+      cursor: pointer;
+
+      width: 13.75em;
+      height: 20em;
+
+      overflow: hidden;
+      background-color: white;
+      border-radius: 11px;
+
+      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+        0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+      border-color: transparent; // TODO: Use pallet
+      border-bottom-style: solid;
+      border-width: 6px;
+    }
+
+    #image-container {
+      height: 9em;
+      padding-bottom: 1em;
+      text-align: center;
+
+      .image {
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+
+        &.circle {
+          margin-top: 1em;
+          display: inline-block;
+          border-radius: 50%;
+          height: 8em;
+          width: 8em;
+        }
+      }
+    }
+
+    #content-container {
+      $text-margins: 0 0 6.25px;
+
+      text-align: center;
+      color: #1a1c26;
+      height: 7em;
+      padding: 0 1em 1em;
+
+      #title {
+        @include font($font-family-sans, .8em, 700); //16px on regular cards
+        @include font-transforms(unset, capitalize);
+        margin: $text-margins;
+      }
+
+
+      #subtitle {
+        @include font($font-family-roboto, .6em, 600); //16px on regular cards
+        @include font-color(#8c8d92);
+        font-style: italic;
+        margin: $text-margins;
+      }
+
+      #description {
+        display: block;
+        white-space: normal;
+        overflow-y: hidden;
+        margin: $text-margins;
+        @include font($font-family-roboto, .6em, 400); //12px on regular cards
+
+        /* This is important! This provides the fade-out for descriptions that exceed the space allocated*/
+        position: relative;
+        &:before {
+          content: '\200b';
+          position: absolute;
+          bottom: 0px;
+          right: 0px;
+          width: 100%;
+          background: linear-gradient(to right, #ffffff00, rgb(255, 255, 255));
+          text-align: right;
+        }
+      }
+
+      #read-more {
+        display: block;
+        cursor: pointer;
+        @include font($font-family-roboto, .6em, 600); //12px on regular cards
+        @include font-color(#8c8d92);
+        @include font-transforms(1px, uppercase);
+      }
+    }
+
+    #footer-container {
+      height: 3em;
+      padding: 0 1.25em 1em;
+
+      .org-logo {
+        float: left;
+        height: 100%;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+
+      #logo-button {
+        float: right;
+        height: 100%;
+        width: 100%;
+
+        #provalens-icon {
+          svg {
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+      }
+
+    }
+  }
+}

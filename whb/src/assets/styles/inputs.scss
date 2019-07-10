@@ -1,0 +1,160 @@
+@import '../mixins/inputs.scss';
+
+//Mixin for all of ProValens fonts
+@mixin provalens-inputs($theme) {
+
+  // Pallets
+  $accent-pallet: map-get($theme, accent);
+  $primary-pallet: map-get($theme, primary);
+  $warn-pallet: map-get($theme, warn);
+
+  // Colors
+  $accent-color: mat-color($accent-pallet);
+  $primary-color: mat-color($primary-pallet);
+  $warn-color: mat-color($warn-pallet);
+
+  provalens-textbox {
+    font-size: $input-font-size;
+    @include input-labels($accent-color);
+
+    input {
+      @include input-layout($primary-color);
+      @include input-placeholders($primary-color);
+      @include input-focus($primary-color);
+
+      &.invalid {
+        border-color: $warn-color !important;
+        @include input-placeholders($warn-color);
+        @include input-focus($warn-color);
+      }
+    }
+  }
+
+  provalens-textarea {
+    font-size: $input-font-size;
+    @include input-labels($accent-color);
+
+    textarea {
+      @include input-layout($primary-color);
+      @include input-placeholders($primary-color);
+      @include input-focus($primary-color);
+
+      &.invalid {
+        border-color: $warn-color !important;
+        @include input-placeholders($warn-color);
+        @include input-focus($warn-color);
+      }
+    }
+  }
+
+  provalens-dropdown {
+    font-size: $input-font-size;
+    @include input-labels($accent-color);
+    @include input-focus($primary-color);
+
+    .invalid {
+      input {
+        border-color: $warn-color !important;
+        @include input-placeholders($warn-color);
+        @include input-focus($warn-color);
+      }
+    }
+
+    &[disabled] {
+      @include mat-form-field-outline($primary-color, #EBEBE4!important);
+    }
+
+    & .mat-form-field {
+      @include mat-form-field-layout();
+
+      @include mat-form-field-outline($primary-color);
+      @include mat-select-placeholder($primary-color);
+
+      &.invalid {
+        @include mat-form-field-outline($warn-color);
+        @include mat-select-placeholder($warn-color);
+      }
+    }
+  }
+
+  provalens-autocomplete {
+    font-size: $input-font-size;
+    @include input-labels($accent-color);
+
+    input {
+      @include input-placeholders($primary-color);
+      &:focus {
+        @include input-placeholders(transparent); // Hide placeholders when focused
+      }
+    }
+    .invalid {
+      input {
+        border-color: $warn-color !important;
+        @include input-placeholders($warn-color);
+      }
+    }
+
+    &[disabled] {
+      @include mat-form-field-outline($primary-color, #EBEBE4!important);
+    }
+
+    & .mat-form-field {
+      @include mat-form-field-layout();
+
+      @include mat-form-field-outline($primary-color);
+      @include mat-select-placeholder($primary-color);
+
+      &.invalid {
+        @include mat-form-field-outline($warn-color);
+        @include mat-select-placeholder($warn-color);
+      }
+    }
+  }
+
+  provalens-chips {
+    font-size: $input-font-size;
+    @include input-labels($accent-color);
+
+    input {
+      @include input-placeholders($primary-color);
+      &:focus {
+        @include input-placeholders(transparent); // Hide placeholders when focused
+      }
+    }
+    .invalid {
+      input {
+        border-color: $warn-color !important;
+        @include input-placeholders($warn-color);
+      }
+    }
+
+    &[disabled] {
+      @include mat-form-field-outline($primary-color, #EBEBE4!important);
+    }
+
+    & .mat-form-field {
+      @include mat-form-field-layout();
+
+      @include mat-form-field-outline($primary-color);
+      @include mat-select-placeholder($primary-color);
+
+      &.invalid {
+        @include mat-form-field-outline($warn-color);
+        @include mat-select-placeholder($warn-color);
+      }
+    }
+  }
+
+  provalens-text-editor {
+    font-size: $input-font-size;
+    @include input-labels($accent-color);
+
+    ckeditor {
+      &.invalid {
+        border-color: $warn-color;
+        border-style: solid;
+        border-width: 0.1em;
+      }
+    }
+  }
+}

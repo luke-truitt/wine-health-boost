@@ -1,0 +1,53 @@
+@mixin provalens-images($theme) {
+  // Pallets
+  $accent-pallet: map-get($theme, accent);
+  $primary-pallet: map-get($theme, primary);
+  $warn-pallet: map-get($theme, warn);
+
+  img.round {
+    border-radius: 50%;
+  }
+
+  provalens-cropper {
+    /* Limit image width to avoid overflow the container */
+    img {
+      max-width: 100%;
+    }
+
+    #image-container {
+      &.circle {
+          .cropper-crop-box, .cropper-view-box {
+            border-radius: 50%;
+        }
+
+        .cropper-view-box {
+            box-shadow: 0 0 0 1px #39f;
+            outline: 0;
+        }
+      }
+    }
+  }
+
+  provalens-image-selector {
+    #dnd-container {
+      height: 5em;
+      width: 100%;
+      padding: 12.5px;
+      align-items: center;
+      text-align: center;
+      background: white;
+
+      // Border for the drag and drop container
+      border-color: mat-color($primary-pallet);
+      border-width: 2px;
+      border-style: dashed;
+      border-width: 3px;
+      border-radius: 15px;
+
+      p {
+        margin: 0;
+        height: 1em;
+      }
+    }
+  }
+}

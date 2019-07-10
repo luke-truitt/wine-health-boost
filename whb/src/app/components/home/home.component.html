@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <title>Hello World</title>
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Unica+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
+
+    <!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "easeInOutCubic". -->
+    <script src="vendors/easings.min.js"></script>
+
+
+    <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
+    <script type="text/javascript" src="vendors/scrolloverflow.min.js"></script>
+
+    <script type="text/javascript" src="fullpage.js"></script>
+  </head>
+  <body>
+    <div class = "intro-container" fxLayout = "column" fxLayoutAlign = "center center">
+     <div class ="headtime">
+       <img src="/assets/images/grapes-purple.png">
+         <div class="intro-title-text">
+            <h1 class="headup">
+                Wine is sunlight<br>held together by water
+             </h1>
+             <h2 class ="headup author">- Galileo Galilei, 1564-1642</h2>
+         </div>
+      </div>
+    </div>
+    <div class="intro-body-text">
+            <div class="row">
+                <div class="column" fxLayout="row" style="background-color:black;">
+                  <div>
+                      <h2 style="color: white; font-size: 200%; font-family: 'Great Vibes', cursive !important;">Eau de Vin</h2>
+                      <h3 style="color: white">Fine Wine Grape Water</h3>
+                      <ul>
+                        <li>Zero Calories</li>
+                        <li>Non-Alcoholic</li>
+                      </ul>
+                      <p>US Product Patent 7569146</p>
+                      <p>French Petent EU1748835</p>
+                      <button (click)="onEauDeVin()">Read More</button>
+                  </div>
+                  <span class="fill"></span>
+                  <img style="width: 30%;" fxLayoutAlign="right right" src="/assets/images/Eau_de_Vin_single_serving.jpg"/>
+                </div>
+                <div class="column" fxLayout="row" style="background-color:rgb(224, 224, 224);">
+                  <div>
+                      <h2 style="color:black; font-size: 200%; font-family: 'Unica One', cursive !important;">Good Vine</h2>
+                      <p style="color:black; font-size: 150%;border-color: white; border-width: 3px; border-style: solid;">Liquid water enhancer from fermented grape concentrates</p>
+                      <p style="color:black; font-size: 150%; border-color: white; border-width: 3px; border-style: solid;">A week's supply of red wine in one, pocket-sized squeeze bottle.</p>
+                      <button (click)="onGoodVine()">Read More</button>
+                  </div>
+                  <span class="fill"></span>
+                  <img style="width: 50%" src="/assets/images/GoodVineLogo.PNG"/>
+                </div>
+            </div>
+     </div>
+     <!--
+       <div class="platform-header-element">
+      <p class="platform-header-text">Application Development</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div fxLayout = "row" fxLayoutAlign = "center end">
+      <div class="web1-container" fxLayout="column" fxLayoutAlign = "center center" >
+          <h1 class="web-header">Web Development</h1>
+          <img src="'/assets/images/web_screenshot_0.PNG'" class="web-picture" fxLayoutAlign= "center center">
+      </div>
+       <div class = "web2-container" fxLayout = "column" fxLayoutAlign = "center center">
+         <div class = "web-text" fxLayoutAlign = "end center" >
+            Powerful web apps built with ASPNET CORE and AngularJS that are not only beautiful, but have the ability to do anything.
+            <br/>
+            From simple e-commerce web pages to robust, full-stack applications.
+          </div>
+          <button type="submit" class="web-button" (click)="onInquire('Web')">Web Apps</button>
+       </div>
+    </div>
+<hr/>
+<br>
+<div fxLayout = "row" fxLayoutAlign = "center center">
+  <div class = "android-container" fxLayout = "column" fxLayoutAlign = "center center">
+      <div class = "android-text" fxLayout = "column" fxLayoutAlign = "center center">
+         Android apps for anything ranging from games to bluetooth controllers to productivity and data processing.
+         <button type="submit" class="android-button" (click)="onInquire('Android')">Android Apps</button>
+      </div>
+  </div>
+  <div class="andoid-container" fxLayout="column" fxLayoutAlign = "center center" >
+      <h1 class="android-header">Android Development</h1>
+      <img src="/assets/images/Android_Screenshot.jpg" class="android-picture" fxLayoutAlign="center">
+  </div>
+</div>
+ <hr/>
+<div fxLayout = "row" fxLayoutAlign = "center center">
+  <div fxLayout="column"  fxLayoutAlign="center center">
+    <h1 class="ios-header">iOS Development</h1>
+    <img src="/assets/images/ios_screenshot_0.png" class="ios-picture">
+  </div>
+  <div class = "ios-container" fxLayout = "column" fxLayoutAlign = "center center">
+        <div class = "ios-text" fxLayout = "column" fxLayoutAlign = "center center">
+            Apps that can both be entertaining and insightful, built on the world's most popular Operating System.
+            <button type="submit" class="ios-button" (click)="onInquire('iOS')">iOS Apps</button>
+        </div>
+    </div>
+</div>
+    -->
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+@import '../mixins/fonts.scss';
+@import '../mixins/common.scss';
+
+@mixin button($font-size: $font-size-large) {
+  @include font($font-family-sans, $font-size, 700);
+  transition: .2s ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+
+@mixin button-color($background-color, $foreground-color, $border-color: $background-color) {
+  @include background($background-color, $border-color);
+  @include foreground($foreground-color);
+}
+
+@mixin button-square($font-size: 20px) {
+  @include button($font-size);
+  height: 2.5em;
+  width: 6.8em;
+  border: solid 2px;
+  border-radius: .25em;
+  margin: 0;
+}
+
+@mixin button-round($font-size: 20px) {
+  @include button($font-size);
+  width: 1.5em;
+  height: 1.5em;
+  //box-shadow: 0 0 5px rgba(26, 28, 38, 0.15) !important;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+  outline: none!important;
+  border: none !important;
+  padding: .25em; //Centers the image with appropriate padding
+  border-radius: 50%; //Makes button round
+
+  * {
+    height:100%;
+    width:100%;
+    font-size: 1em;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+@mixin button-link($font-size: 14px) {
+  @include button($font-size);
+  outline: none!important;
+  border: none !important;
+
+  provalens-icon {
+    height: 1em;
+    width: 1em;
+  }
+}
+
+@mixin button-icon($foreground-color, $inverse-color: #ffffff){
+  @include background(transparent);
+  @include foreground($foreground-color);
+  @include font($font-family-sans, null, 700);
+
+  padding:0px;
+
+  .mat-icon{
+    height: auto;
+    width: auto;
+  }
+  *:not(svg) {
+    color: $foreground-color;
+    font-size: 1em;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  *.round {
+    color: $inverse-color;
+    background-color: $foreground-color;
+
+    svg {
+      fill: $inverse-color;
+    }
+  }
+}

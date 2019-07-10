@@ -1,0 +1,34 @@
+<div>
+  <mat-toolbar class = "top-bar" fxLayout="row" style="height:110px;">
+      <div id="logo-container" fxLayoutAlign="start" *ngIf="logo">
+          <a fxLayout="column" fxLayoutAlign="center" style="cursor: pointer;">
+            <img [src] = logo style="height:90px;" (click)=onLogoClick()>
+          </a>
+      </div>
+      <span class = "fill"></span>
+      <!-- <button class="link-button accent"(click)="onEauDeVin()">
+          <span>Eau de Vin</span>
+        </button> -->
+      <button class="link-button accent" (click)="onShop()">
+          <span>Shop</span>
+        </button>
+        <button class="link-button accent" (click)="onWHB()">
+            <span>Wine Health Boost</span>
+          </button>
+        <button class="link-button accent" (click)="onAboutUs()">
+          <span>About Us</span>
+        </button>
+      <button *ngIf="authService.isAuthenticated" (click)="onLogout()" class = "accent">Logout</button>
+    </mat-toolbar>
+</div>
+<router-outlet></router-outlet>
+<div>
+    <mat-toolbar class = "bottom-bar" fxLayout="row" style="height:110px;" fxLayoutAlign = "center center">
+        Contact:
+        <address>
+          &nbsp;
+          <a href = "mailto:tpeyton@nouv-eau.com" style="color: white">tpeytom@nouv-eau.com</a>
+        </address>
+        <span class = "fill"></span>
+      </mat-toolbar>
+  </div>

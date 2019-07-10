@@ -1,0 +1,29 @@
+@import '../mixins/buttons.scss';
+
+
+//Mixin for all of ProValens buttons
+@mixin provalens-toasters($theme){
+  // Pallets
+  $accent-pallet: map-get($theme, accent);
+  $primary-pallet: map-get($theme, primary);
+  $warn-pallet: map-get($theme, warn);
+
+  // Colors
+  $accent-color: mat-color($accent-pallet);
+  $primary-color: mat-color($primary-pallet);
+  $warn-color: mat-color($warn-pallet);
+
+  .mat-snack-bar-container {
+    min-width: 0px;
+    border-radius: 8px;
+
+    .custom-toaster {
+      border-radius: 8px;
+      margin: -20px -24px; //Override the snack-bars container;
+      background-color:white;
+      color: #1a1c26;
+      max-width: calc(100% + 48px)!important;
+      padding: 14px 24px;
+    }
+  }
+}

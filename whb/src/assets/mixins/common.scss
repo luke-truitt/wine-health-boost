@@ -1,0 +1,18 @@
+//Font-size equilvelency is based on browsers default 16px font-size
+$margin-extra-large: 1.5em;  // Equivelent to 24px
+$margin-large: 1.25em; // Equivelent to 20px
+$margin-medium: 12.5;   // Equivelent to 16px
+$margin-small: .875em; // Equivelent to 14px
+$margin-extra-small: .75em; // Equivelent to 12px
+
+@mixin background($background-color, $border-color: $background-color) {
+  background-color: $background-color;
+  border-color: $border-color;
+}
+
+@mixin foreground($foreground-color) {
+  color:  $foreground-color;
+  svg {
+    fill: $foreground-color;
+  }
+}

@@ -1,0 +1,49 @@
+@import './buttons.scss';
+
+$toolbar-height: 90px;
+
+//Mixin for all of ProValens fonts
+@mixin provalens-toolbars($theme){
+  provalens-toolbar {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(26, 28, 38, 0.1);
+
+    &.header {
+      position: fixed;
+      top: 0;
+      z-index: 999;
+    }
+
+    &.footer {
+      width: auto !important;
+      z-index: 999;
+    }
+
+    button.link {
+      margin: 0 .75em;
+    }
+    #toolbar {
+      padding: 20px 6.25% 20px;
+      height: $toolbar-height;
+
+      #logo-container {
+        height:100%;
+
+        *:not(img) {
+          height: 100%;
+        }
+        img {
+          max-width: 150px;
+          max-height: 50px;
+        }
+      }
+    }
+
+    +* {
+      margin-top: $toolbar-height;
+      min-height: calc(100vh - #{$toolbar-height} - #{$toolbar-height});
+    }
+  }
+
+}
