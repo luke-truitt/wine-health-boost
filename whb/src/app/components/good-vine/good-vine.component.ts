@@ -13,10 +13,10 @@ export class GoodVineComponent implements OnInit {
     // this is just an example => for more details on config please visit fullPage.js docs
     this.config = {
       licenseKey: 'YOUR LICENSE KEY HERE',
-      sectionsColor: ['#7E1862', 'whitesmoke', '#634441', 'whitesmoke'],
+      sectionsColor: ['#CACFB2', 'whitesmoke', 'whitesmoke', 'whitesmoke'],
       anchors: ['wine-health-boost', 'product', 'details', 'enhanced-content'],
       navigation: true,
-      scrollSpeed: 100
+      scrollingSpeed: 1000
     };
   }
 
