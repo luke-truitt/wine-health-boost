@@ -27,7 +27,7 @@
     "@fullpage/angular-fullpage": "0.0.12",
     "core-js": "^2.5.4",
     "firebase": "^6.2.4",
-    "fullpage.js": "^3.0.5",
+    "fullpage.js": "^4.0.5",
     "rxjs": "6.0.0",
     "zone.js": "~0.8.26"
   },
